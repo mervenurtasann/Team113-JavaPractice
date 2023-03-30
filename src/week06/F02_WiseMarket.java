@@ -31,7 +31,7 @@ public class F02_WiseMarket {
         System.out.println("======== WISE MARKET'E HOSGELDINIZ ========");
         System.out.println("---------------- M E N U ----------------");
         System.out.println("Lutfen alisveris yapmak istediginiz reyonu seciniz");
-        System.out.println("1- Manav Reyonu\n2- Sarkuteri Reyonu\n3-Market Reyonu\n4- Fis yazdir\n5- Cikis");
+        System.out.println("1- Manav Reyonu\n2- Sarkuteri Reyonu\n3- Market Reyonu\n4- Fis yazdir\n5- Cikis");
         int secim = scan.nextInt();
         if (!(secim >= 1 && secim <= 5)) {
             System.out.println("Lutfen gecerli bir deger giriniz");
@@ -66,7 +66,50 @@ public class F02_WiseMarket {
     }
 
     private static void market() {
+        System.out.println("Lutfen almak istediginiz urunu seciniz : \n10- Nutella 750g 85₺\n11- Cay 70₺\n12- Seker 60₺\n13- Gullac 45₺\n14- Un 53₺");
+        while (!ekUrun) {
+            urunKodu = scan.nextInt();
+            if (urunKodu >= 10 && urunKodu <= 14) {
+                System.out.println("Kac paket alacaksiniz : ");
+                urunAdedi = scan.nextInt();
+                switch (urunKodu) {
+                    case 10:
+                        urunAdi = "Nutella 750g";
+                        urunFiyati = 85;
+                        System.out.println(urunAdedi + " adet " + urunAdi + " " + (urunFiyati * urunAdedi) + " TL'dir");
+                        break;
+                    case 11:
+                        urunAdi = "Cay";
+                        urunFiyati = 70;
+                        System.out.println(urunAdedi + " adet " + urunAdi + " " + (urunFiyati * urunAdedi) + " TL'dir");
+                        break;
+                    case 12:
+                        urunAdi = "Seker";
+                        urunFiyati = 60;
+                        System.out.println(urunAdedi + " adet " + urunAdi + " " + (urunFiyati * urunAdedi) + " TL'dir");
+                        break;
+                    case 13:
+                        urunAdi = "Gullac";
+                        urunFiyati = 45;
+                        System.out.println(urunAdedi + " adet " + urunAdi + " " + (urunFiyati * urunAdedi) + " TL'dir");
+                        break;
+                    case 14:
+                        urunAdi = "Un";
+                        urunFiyati = 53;
+                        System.out.println(urunAdedi + " adet " + urunAdi + " " + (urunFiyati * urunAdedi) + " TL'dir");
+                        break;
+                }
+                urunFiyati *= urunAdedi;
+                toplam += urunFiyati;
+                System.out.println("Toplam fiyat : " + toplam);
+                sepet += urunAdi + " : " + urunFiyati + " TL'dir";
+                System.out.println("Ek urun almak isterseniz urun kodunu giriniz. Istemiyorsaniz ana menuye donmek icin 0 tusuna basiniz ");
 
+            } else if (urunKodu == 0) {
+                girisEkrani();
+            }
+        }
+        ekUrun = false;
     }
 
     private static void sarkuteri() {
@@ -104,7 +147,7 @@ public class F02_WiseMarket {
                 sepet += urunAdi + " : " + urunFiyati + " TL'dir";
                 System.out.println("Ek urun almak istiyorsaniz ilgili urun kodunu giriniz.Eger almak istemiyorsaniz 0 tusuna basiniz");
 
-            }else if (urunKodu == 0){
+            } else if (urunKodu == 0) {
                 girisEkrani();
             }
         }
