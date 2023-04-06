@@ -21,10 +21,10 @@ public class KutuphaneKayitProgrami {
             this.yayinYili = yayinYili;
         }
         public void kitapYazdir() {
-            System.out.println("Kitap Adi : " + ad);
-            System.out.println("Yazar Adi : " + yazarAdi);
-            System.out.println("Yayınevi Adi : " + yayinEvi);
-            System.out.println("Kitabın Baski Yili : " + yayinYili);
+            System.out.print("Kitap Adi : " + ad);
+            System.out.print("Yazar Adi : " + yazarAdi);
+            System.out.print("Yayınevi Adi : " + yayinEvi);
+            System.out.print("Kitabın Baski Yili : " + yayinYili);
         }
 
         public static void main(String[] args) {
@@ -47,13 +47,13 @@ public class KutuphaneKayitProgrami {
                 switch (secim) {
                     case 1:
                         scan.nextLine();
-                        System.out.println("Kitap Adi : ");
+                        System.out.print("Kitap Adi : ");
                         String ad = scan.nextLine();
-                        System.out.println("Yazar Adi : ");
+                        System.out.print("Yazar Adi : ");
                         String yazar = scan.nextLine();
-                        System.out.println("Yayinevi Adi : ");
+                        System.out.print("Yayinevi Adi : ");
                         String yayineviAdi = scan.nextLine();
-                        System.out.println("Kitap Baski Yili : ");
+                        System.out.print("Kitap Baski Yili : ");
                         int yayinYili = scan.nextInt();
 
                         // girilen bilgileri kutuphane listesine ekleyecegiz
