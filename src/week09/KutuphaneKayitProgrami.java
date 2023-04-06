@@ -20,8 +20,6 @@ public class KutuphaneKayitProgrami {
             this.yayinEvi = yayinEvi;
             this.yayinYili = yayinYili;
         }
-
-        // kitap ozelliklerini yazdiran constructor
         public void kitapYazdir() {
             System.out.println("Kitap Adi : " + ad);
             System.out.println("Yazar Adi : " + yazarAdi);
@@ -43,7 +41,7 @@ public class KutuphaneKayitProgrami {
 
             int secim = 0;
             while (secim != 3) {
-                System.out.print("Seciminiz : " );
+                System.out.print("Seciminiz : ");
                 secim = scan.nextInt();
 
                 switch (secim) {
@@ -60,16 +58,16 @@ public class KutuphaneKayitProgrami {
 
                         // girilen bilgileri kutuphane listesine ekleyecegiz
 
-                        Kitap kitap = new Kitap(ad,yazar,yayineviAdi,yayinYili);
+                        Kitap kitap = new Kitap(ad, yazar, yayineviAdi, yayinYili);
                         kutuphane.add(kitap);
                         System.out.println("Kitap Basariyla Eklendi");
 
                         break;
-                    case 2 :
+                    case 2:
                         System.out.println("Kutuphaneye Eklenmis Kitaplar Listesi");
                         System.out.println("---------------------------------------");
-                        for (Kitap k: kutuphane
-                             ) {
+                        for (Kitap k : kutuphane
+                        ) {
                             k.kitapYazdir();
                             System.out.println("-----------------------------------");
                         }
