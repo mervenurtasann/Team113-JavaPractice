@@ -11,6 +11,7 @@ public class KutuphaneKayitProgrami {
         String yazarAdi;
         String yayinEvi;
         int yayinYili;
+        static ArrayList<Kitap> kutuphane = new ArrayList<>();
 
         // Kitap nesnesi methodu
 
@@ -28,7 +29,6 @@ public class KutuphaneKayitProgrami {
         }
 
         public static void main(String[] args) {
-            ArrayList<Kitap> kutuphane = new ArrayList<>();
             Scanner scan = new Scanner(System.in);
 
             // Kutuphane giris menusu
