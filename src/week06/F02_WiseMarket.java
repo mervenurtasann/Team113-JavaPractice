@@ -1,5 +1,8 @@
 package week06;
 
+import javax.xml.crypto.Data;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Scanner;
 
 public class F02_WiseMarket {
@@ -59,10 +62,29 @@ public class F02_WiseMarket {
     }
 
     private static void cikis() {
+        scan.close();
+        System.exit(0);
     }
 
     private static void fis() {
+        System.out.println("====== WISE MARKET ======");
+        System.out.println("Alıverisinizde bizi tercih ettiginiz icin\n Tesekkur ederiz.");
+        System.out.println(sepet);
+        System.out.println("Alısverısınızın toplam tutari : " + toplam);
+        System.out.println("");
 
+        System.out.println("Musterinin verdigi miktari giriniz");
+        int odeme = scan.nextInt();
+        while (odeme < toplam) {
+            System.out.println("Verdiginiz miktar alisveris icin yeterli degildir");
+            odeme = scan.nextInt();
+        }
+        System.out.println("Odediginiz Miktar : " + odeme);
+        System.out.println("ALisveris Tutari : " + toplam);
+        System.out.println("Para Ustu : " + (odeme - toplam));
+        System.out.println("");
+        System.out.println("Iyi Gunler Dileriz");
+        cikis();
     }
 
     private static void market() {
@@ -102,7 +124,7 @@ public class F02_WiseMarket {
                 urunFiyati *= urunAdedi;
                 toplam += urunFiyati;
                 System.out.println("Toplam fiyat : " + toplam);
-                sepet += urunAdi + " : " + urunFiyati + " TL'dir";
+                sepet += urunAdi + " : " + urunFiyati + " TL'dir\n";
                 System.out.println("Ek urun almak isterseniz urun kodunu giriniz. Istemiyorsaniz ana menuye donmek icin 0 tusuna basiniz ");
 
             } else if (urunKodu == 0) {
@@ -144,7 +166,7 @@ public class F02_WiseMarket {
                 urunFiyati = urunAdedi * urunFiyati;
                 toplam += urunFiyati;
                 System.out.println("Toplam Fiyat : " + toplam);
-                sepet += urunAdi + " : " + urunFiyati + " TL'dir";
+                sepet += urunAdi + " : " + urunFiyati + " TL'dir\n";
                 System.out.println("Ek urun almak istiyorsaniz ilgili urun kodunu giriniz.Eger almak istemiyorsaniz 0 tusuna basiniz");
 
             } else if (urunKodu == 0) {
@@ -191,7 +213,7 @@ public class F02_WiseMarket {
                 urunFiyati = urunFiyati * urunAdedi;
                 toplam += urunFiyati;
                 System.out.println("Olusan sepet tutari : " + toplam);
-                sepet += urunAdi + " : " + urunFiyati + " TL'dir";
+                sepet += urunAdi + " : " + urunFiyati + " TL'dir\n";
                 System.out.println(sepet);
                 System.out.println("Baska urun almak ister misiniz? Eger baska urun almak isterseniz urun kodunu giriniz\nAna menuye donmek icin 0'a basiniz");
             } else if (urunKodu == 0) {
